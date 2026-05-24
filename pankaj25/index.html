@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trading Learning Community - Gautam Kumar Jha</title>
+
+<style>
+:root{
+    --bg-dark:#081120;
+    --card-bg:rgba(15,23,42,0.82);
+    --border-color:#00d9ff;
+    --text-light:#f8fafc;
+    --accent:#8b5cf6;
+    --accent2:#00f0ff;
+    --button-start:#7c3aed;
+    --button-end:#00d4ff;
+    --button-text:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(124,58,237,.20), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0,212,255,.18), transparent 30%),
+    linear-gradient(135deg,#020617,#081120,#111827);
+    color:var(--text-light);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding:20px;
+    position:relative;
+}
+
+/* Floating Background */
+.bg-elements{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.floating-circle{
+    position:absolute;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent2)
+    );
+    opacity:.10;
+    animation:float 18s linear infinite;
+    filter:blur(1px);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(120vh) rotate(0deg);
+        opacity:0;
+    }
+    30%{
+        opacity:.14;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Container */
+.container{
+    width:100%;
+    max-width:430px;
+    background:var(--card-bg);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+    backdrop-filter:blur(25px);
+    box-shadow:
+    0 0 60px rgba(0,212,255,.12),
+    0 15px 50px rgba(0,0,0,.45);
+}
+
+.top-glow{
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(124,58,237,.25);
+    border-radius:50%;
+    filter:blur(70px);
+    top:-80px;
+    left:-50px;
+}
+
+.bottom-glow{
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(0,212,255,.18);
+    border-radius:50%;
+    filter:blur(70px);
+    right:-60px;
+    bottom:-80px;
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    padding:32px 26px;
+    text-align:center;
+}
+
+.tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:22px;
+    color:#dbeafe;
+}
+
+.profile-img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(255,255,255,.15);
+    margin-bottom:18px;
+    box-shadow:0 0 35px rgba(0,212,255,.30);
+}
+
+h1{
+    font-size:28px;
+    font-weight:900;
+    margin-bottom:10px;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #93c5fd
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.description{
+    font-size:15px;
+    line-height:1.8;
+    color:#cbd5e1;
+    margin-bottom:24px;
+}
+
+.highlight{
+    color:#67e8f9;
+    font-weight:700;
+}
+
+/* CTA Button */
+.action-btn{
+    width:100%;
+    display:block;
+    text-decoration:none;
+    padding:18px 15px;
+    border-radius:18px;
+    background:linear-gradient(
+        90deg,
+        var(--button-start),
+        var(--button-end)
+    );
+    color:white;
+    font-size:17px;
+    font-weight:800;
+    transition:.3s;
+    box-shadow:0 8px 35px rgba(124,58,237,.35);
+    margin-bottom:24px;
+}
+
+.action-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Features */
+.feature-list{
+    list-style:none;
+    margin-top:15px;
+}
+
+.feature-list li{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:15px;
+    margin-bottom:12px;
+    text-align:left;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.feature-list li::before{
+    content:"📊";
+    font-size:18px;
+}
+
+/* Disclaimer */
+.disclaimer-box{
+    margin-top:24px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:18px;
+    padding:16px;
+    text-align:left;
+    font-size:11px;
+    line-height:1.8;
+    color:#94a3b8;
+}
+
+/* Footer */
+.footer-links{
+    margin-top:24px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#94a3b8;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.footer-links a:hover{
+    color:#00d4ff;
+}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1266060392277992');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1266060392277992&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+<div class="bg-elements">
+    <div class="floating-circle" style="width:70px;height:70px;left:8%;animation-delay:0s;"></div>
+    <div class="floating-circle" style="width:120px;height:120px;left:70%;animation-delay:3s;"></div>
+    <div class="floating-circle" style="width:45px;height:45px;left:50%;animation-delay:7s;"></div>
+</div>
+
+<div class="container">
+
+    <div class="top-glow"></div>
+    <div class="bottom-glow"></div>
+
+    <div class="content">
+
+        <div class="tag">
+            🚀 Trading Learning Community
+        </div>
+
+        <img
+        src="https://min-4a9.pages.dev/pnk.jpg"
+        alt="Gautam Kumar Jha"
+        class="profile-img">
+
+        <h1>TRADE WITH PANKAJ</h1>
+
+        <div class="description">
+            Join our <span class="highlight">Premium Trading Learning Community</span>
+            and improve your Trading Knowledge with daily market insights.
+            <br><br>
+            Get <span class="highlight">Daily Market Analysis, Learning Content & Trading Education</span> absolutely FREE.
+        </div>
+
+        <a
+        href="javascript:void(0)"
+        class="action-btn"
+        onclick="joinTelegram()">
+        🚀 Join Free Telegram Community
+        </a>
+
+        <ul class="feature-list">
+            <li>Daily Nifty & BankNifty Market Analysis</li>
+            <li>Trading Learning & Educational Support</li>
+            <li>Beginner Friendly Trading Concepts</li>
+            <li>Market Updates & Learning Case Studies</li>
+        </ul>
+
+        <div class="disclaimer-box">
+            <b>Important Notice:</b><br>
+            We are <b>not SEBI registered financial advisors</b>.
+            All content shared here is only for
+            <b>educational and learning purposes</b>.
+            Stock market investing and trading involve risk.
+            Please do your own research before taking any financial decision.
+            Past performance does not guarantee future results.
+        </div>
+
+        <div class="footer-links">
+            <a href="/privacy-policy.html" target="_blank">
+            Privacy Policy
+            </a>
+
+            <a href="/terms.html" target="_blank">
+            Terms & Conditions
+            </a>
+
+            <a href="/disclaimer.html" target="_blank">
+            Disclaimer
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function joinTelegram(){
+
+    if(typeof fbq !== 'undefined'){
+        fbq('track', 'Lead');
+    }
+
+    window.location.href =
+    "https://t.me/+10acZobne9w5MWVl";
+}
+</script>
+
+</body>
+</html>
