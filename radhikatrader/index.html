@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>RADHIKA TELUGU TRADER</title>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    background:#f5f5f5;
+    font-family: Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:12px;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+    background:#ffffff;
+    border-left:7px solid #f4bf00;
+    border-right:7px solid #f4bf00;
+    border-radius:24px;
+    text-align:center;
+    padding:22px 16px 28px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.profile{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    border:5px solid #f4bf00;
+    object-fit:cover;
+    margin-bottom:18px;
+}
+
+.title{
+    font-size:30px;
+    font-weight:800;
+    color:#d99b00;
+    margin-bottom:16px;
+}
+
+.desc{
+    font-size:17px;
+    line-height:1.5;
+    color:#222;
+    margin-bottom:22px;
+    font-weight:500;
+}
+
+.learn{
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#111;
+}
+
+.box{
+    width:100%;
+    border:3px solid #f4bf00;
+    border-radius:20px;
+    padding:16px 12px;
+    margin-bottom:14px;
+    background:#fff;
+    font-size:17px;
+    color:#222;
+    font-weight:500;
+    line-height:1.4;
+}
+
+.join-btn{
+    width:100%;
+    border:none;
+    background:#f4bf00;
+    border-radius:999px;
+    padding:18px 14px;
+    font-size:23px;
+    font-weight:900;
+    color:#111;
+    cursor:pointer;
+    margin-top:10px; /* Button thoda upar */
+    margin-bottom:14px;
+}
+
+.join-btn:active{
+    transform:scale(0.98);
+}
+
+.timer{
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#111;
+}
+
+.disclaimer{
+    font-size:12px;
+    color:#666;
+    line-height:1.5;
+    padding:0 4px;
+}
+
+@media(max-width:360px){
+    .title{
+        font-size:26px;
+    }
+
+    .box{
+        font-size:15px;
+    }
+
+    .join-btn{
+        font-size:20px;
+    }
+}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'981145901650941');
+fbq('init', '981145901650941');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=981145901650941&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- IMAGE PLACEHOLDER -->
+    <img 
+        src="https://min-4a9.pages.dev/radhik%20img.jpg" 
+        alt="Profile"
+        class="profile"
+    >
+
+    <div class="title">RADHIKA TELUGU TRADER</div>
+
+    <div class="desc">
+        ⚡ Daily Educational Insights ✅ Best Trading Expert Learning Group ⚡
+    </div>
+
+    <div class="learn">Learn</div>
+
+    <div class="box">
+        📘 Puthiya thiramaigal katrukollungal 📊
+    </div>
+
+    <div class="box">
+        💎 Daily Educational Insights 💎
+    </div>
+
+    <div class="box">
+        ⚡ INTRA DAY OPTION TRADERS 📈
+    </div>
+
+    <div class="box">
+        📗 14 Years Experience in Share Market 📗
+    </div>
+
+    <button class="join-btn" id="joinBtn">
+        👉 JOIN TELEGRAM CHANNEL 👈
+    </button>
+
+    <div class="timer">
+        Redirecting in <span id="countdown">20</span>s
+    </div>
+
+    <div class="disclaimer">
+        Disclaimer: This channel and website are for educational and informational purposes only.
+    </div>
+
+</div>
+
+<script>
+const TELEGRAM_LINK = "https://t.me/+YJlLeM9MTQc4NTI9";
+const EVENT_STORAGE_KEY = "subscribe_event_fired";
+
+function fireSubscribeEventOnce() {
+
+    if (!localStorage.getItem(EVENT_STORAGE_KEY)) {
+
+        if (typeof fbq !== "undefined") {
+            fbq('track', 'Subscribe');
+        }
+
+        localStorage.setItem(EVENT_STORAGE_KEY, "true");
+    }
+}
+
+function redirectToTelegram() {
+
+    fireSubscribeEventOnce();
+
+    window.location.href = TELEGRAM_LINK;
+}
+
+// BUTTON CLICK
+document
+.getElementById("joinBtn")
+.addEventListener("click", function () {
+    redirectToTelegram();
+});
+
+// 20 SECOND AUTO TIMER
+let timeLeft = 20;
+
+const timer = setInterval(() => {
+
+    timeLeft--;
+
+    document.getElementById("countdown").innerText = timeLeft;
+
+    if (timeLeft <= 0) {
+
+        clearInterval(timer);
+
+        redirectToTelegram();
+    }
+
+}, 1000);
+</script>
+
+</body>
+</html>
