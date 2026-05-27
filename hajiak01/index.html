@@ -1,12 +1,166 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Stock Market Learning Community</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muslim Halal Trading Education</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(180deg,#081526,#0b1a2f);
+  color:white;
+  text-align:center;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+}
+
+.container{
+  width:100%;
+  max-width:430px;
+}
+
+.card{
+  background:#112b4a;
+  padding:26px 22px;
+  border-radius:24px;
+  border:2px solid rgba(0,198,255,.25);
+  box-shadow:0 0 25px rgba(0,0,0,.35);
+}
+
+/* LOGO */
+.logo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #00c6ff;
+  margin-bottom:14px;
+  box-shadow:0 0 15px rgba(0,198,255,.45);
+}
+
+h2{
+  font-size:24px;
+  line-height:1.3;
+  margin-bottom:10px;
+}
+
+.sub-text{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.95;
+  margin-bottom:16px;
+}
+
+.tag{
+  background:linear-gradient(90deg,#ff9800,#ffb300);
+  color:#111;
+  padding:8px 16px;
+  border-radius:30px;
+  display:inline-block;
+  margin:12px 0 18px;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* BUTTON */
+.btn{
+  width:100%;
+  border:none;
+  display:block;
+  background:linear-gradient(90deg,#00c6ff,#0072ff);
+  color:white;
+  padding:16px;
+  border-radius:14px;
+  text-decoration:none;
+  margin:12px 0;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn:hover{
+  transform:scale(1.02);
+}
+
+.btn:disabled{
+  opacity:.85;
+  cursor:not-allowed;
+}
+
+.btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,.22);
+  transform:skewX(-25deg);
+  animation:shine 2.3s infinite;
+}
+
+@keyframes shine{
+  100%{
+    left:130%;
+  }
+}
+
+/* POPUP NOTE */
+.popup-note{
+  font-size:12px;
+  line-height:1.5;
+  color:#d7d7d7;
+  margin-top:-2px;
+  margin-bottom:16px;
+  padding:10px;
+  background:rgba(255,255,255,0.06);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.popup-note b{
+  color:#ffd54f;
+}
+
+/* CONTENT */
+.hindi-text{
+  margin:12px 0;
+  font-size:15px;
+  line-height:1.8;
+}
+
+ul{
+  text-align:left;
+  margin-top:12px;
+  padding-left:20px;
+}
+
+ul li{
+  margin-bottom:10px;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.disclaimer{
+  font-size:11px;
+  opacity:0.8;
+  margin-top:18px;
+  line-height:1.6;
+}
+</style>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -18,6 +172,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'772187562552242');
 fbq('init', '772187562552242');
 fbq('track', 'PageView');
 </script>
@@ -26,314 +181,110 @@ src="https://www.facebook.com/tr?id=772187562552242&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:
-linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-color:#fff;
-overflow-x:hidden;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-text-align:center;
-}
-
-.hero{
-padding:50px 20px;
-}
-
-.logo-wrap{
-display:flex;
-justify-content:center;
-margin-bottom:20px;
-}
-
-.logo{
-width:130px;
-height:130px;
-border-radius:50%;
-overflow:hidden;
-border:5px solid #d4af37;
-box-shadow:0 0 35px rgba(212,175,55,.45);
-background:#fff;
-}
-
-.logo img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.badge{
-display:inline-block;
-background:rgba(212,175,55,.15);
-border:1px solid rgba(212,175,55,.5);
-padding:10px 20px;
-border-radius:40px;
-font-size:14px;
-color:#f8e28c;
-margin-bottom:25px;
-backdrop-filter:blur(8px);
-}
-
-.title{
-font-size:50px;
-font-weight:800;
-line-height:1.3;
-margin-bottom:20px;
-}
-
-.highlight{
-color:#d4af37;
-}
-
-.subtitle{
-font-size:20px;
-line-height:1.9;
-max-width:900px;
-margin:auto;
-color:#ededed;
-}
-
-.cta-btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-margin-top:35px;
-background:linear-gradient(135deg,#d4af37,#f5d76e);
-color:#111;
-padding:20px 45px;
-font-size:22px;
-font-weight:700;
-border-radius:60px;
-text-decoration:none;
-box-shadow:0 0 40px rgba(212,175,55,.35);
-transition:.3s ease;
-}
-
-.cta-btn:hover{
-transform:translateY(-3px) scale(1.03);
-}
-
-.section{
-margin-top:60px;
-}
-
-.section-title{
-font-size:34px;
-font-weight:700;
-margin-bottom:30px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:22px;
-}
-
-.card{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.10);
-backdrop-filter:blur(10px);
-padding:30px 22px;
-border-radius:28px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-font-size:22px;
-margin-bottom:10px;
-color:#f5d76e;
-}
-
-.card p{
-line-height:1.8;
-color:#e8e8e8;
-}
-
-.disclaimer{
-margin-top:70px;
-background:#fff;
-color:#111;
-padding:50px 25px;
-border-radius:35px 35px 0 0;
-}
-
-.disclaimer h2{
-font-size:32px;
-margin-bottom:20px;
-color:#0f5132;
-}
-
-.disclaimer p{
-max-width:950px;
-margin:auto;
-line-height:2;
-font-size:16px;
-color:#333;
-}
-
-.footer{
-padding:25px;
-font-size:14px;
-color:#ddd;
-}
-
-@media(max-width:768px){
-
-.title{
-font-size:34px;
-}
-
-.subtitle{
-font-size:17px;
-}
-
-.cta-btn{
-font-size:18px;
-padding:18px 30px;
-width:100%;
-}
-
-.logo{
-width:110px;
-height:110px;
-}
-}
-</style>
 </head>
 <body>
 
 <div class="container">
+  <div class="card">
 
-<section class="hero">
+    <!-- LOGO -->
+    <img src="https://min-4a9.pages.dev/haji%2025.jpg" 
+    alt="Logo" class="logo">
 
-<div class="logo-wrap">
-<div class="logo">
-<img src="https://min-4a9.pages.dev/haji%2025.jpg" alt="Logo">
-</div>
-</div>
+    <h2>📊 MUFTI SOYAB TRADER</h2>
 
-<div class="badge">
-📈 MUFTI SOYAB TRADER
-</div>
+    <p class="sub-text">
+      📿 Learn Stock Market with Ethical & Halal Educational Approach
+    </p>
 
-<h1 class="title">
-Learn <span class="highlight">Stock Market</span><br>
-in Easy <span class="highlight">Urdu + English</span>
-</h1>
+    <div class="tag">
+      📈 Free Educational Community
+    </div>
 
-<p class="subtitle">
-السلام علیکم 🤝<br><br>
+    <!-- BUTTON -->
+    <button class="btn" id="joinBtn">
+      🚀 JOIN FREE TELEGRAM
+    </button>
 
-Agar aap <strong>Stock Market ko seekhna</strong> chahte hain aur market ko better tareeqay se samajhna chahte hain, to hamari learning community aap ke liye hai.  
+    <!-- POPUP NOTE -->
+    <div class="popup-note">
+      ⚠️ Agar popup aaye to <b>“Continue”</b> dabayein <br>
+      Telegram instantly open karne ke liye <b>“Continue”</b> par click karein.
+    </div>
 
-Yahan hum <strong>educational discussions</strong>, market basics, chart understanding aur risk awareness par baat karte hain — simple Urdu + English language mein taake har koi aasani se samajh sake. 📊
+    <div class="hindi-text">
+      کیا آپ <b>Trading</b> سیکھنا چاہتے ہیں؟<br>
+      <b>Free Telegram Channel join karke seekhein 📚</b>
+    </div>
 
-Beginners ho ya learning ka shoq rakhte ho — yahan focus sirf <strong>education, learning aur understanding</strong> par hai.
-</p>
+    <ul>
+      <li>📊 Daily Educational Market Analysis</li>
+      <li>📘 Stock Market Learning Content</li>
+      <li>🔥 Market Insights & Real Case Studies</li>
+      <li>⚡ Real-time Market Updates</li>
+      <li>📿 Halal Perspective & Ethical Discussion</li>
+    </ul>
 
-<a href="https://t.me/+Xq8koHAfKTsyNmE1"
-target="_blank"
-class="cta-btn"
-id="joinTelegram">
-🚀 Join Telegram Community
-</a>
+    <!-- SECOND BUTTON -->
+    <button class="btn" id="joinBtn2">
+      ✅ JOIN FREE CHANNEL
+    </button>
 
-</section>
+    <!-- POPUP NOTE -->
+    <div class="popup-note">
+      ⚠️ Agar popup aaye to <b>“Continue”</b> dabayein <br>
+      Telegram instantly open karne ke liye <b>“Continue”</b> par click karein.
+    </div>
 
-<section class="section">
+    <p class="disclaimer">
+      Disclaimer: Yeh content sirf educational purpose ke liye hai.
+      Hum investment advice ya profit guarantee provide nahi karte.
+      Trading mein market risk hota hai.
+    </p>
 
-<h2 class="section-title">
-Why Join Our Community?
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>📚 Learning Focus</h3>
-<p>
-Stock Market ki education aur market ko samajhne ka easy tareeqa.
-</p>
-</div>
-
-<div class="card">
-<h3>📊 Market Understanding</h3>
-<p>
-Charts, basics aur educational discussions simple Urdu + English mein.
-</p>
-</div>
-
-<div class="card">
-<h3>🤝 Community Support</h3>
-<p>
-Ek learning based community jahan knowledge sharing aur discussions hoti hain.
-</p>
-</div>
-
-<div class="card">
-<h3>🕌 Respectful Environment</h3>
-<p>
-Simple aur respectful learning environment for everyone.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="disclaimer">
-
-<h2>Disclaimer</h2>
-
-<p>
-Ye platform sirf <strong>educational aur informational purpose</strong> ke liye hai.  
-
-Hum kisi bhi tarah ka financial advice, investment guarantee ya profit claim provide nahi karte.  
-
-Stock Market mein risk hota hai, isliye koi bhi financial decision lene se pehle apni research zaroor karein.  
-
-Community content sirf <strong>learning aur educational awareness</strong> ke liye share kiya jata hai.
-</p>
-
-</section>
-
-<div class="footer">
-© 2026 Stock Market Learning Community | All Rights Reserved
-</div>
-
+  </div>
 </div>
 
 <script>
-// Subscribe Event Only One Time
-document.getElementById("joinTelegram").addEventListener("click", function(){
 
-if(!localStorage.getItem("subscribeEventFired")){
+/* TELEGRAM LINKS */
+const webUrl =
+"https://t.me/+Xq8koHAfKTsyNmE1";
 
-fbq('track', 'Subscribe');
+/* Telegram Deep Link */
+const deepUrl =
+"tg://join?invite=Xq8koHAfKTsyNmE1";
 
-localStorage.setItem("subscribeEventFired","true");
+function handleJoin(){
+
+    // Subscribe event only once
+    if(!sessionStorage.getItem("tg_subscribed")){
+
+        if(typeof fbq !== "undefined"){
+            fbq('track','Subscribe');
+        }
+
+        sessionStorage.setItem(
+            "tg_subscribed",
+            "true"
+        );
+    }
+
+    /* Open Telegram app */
+    window.location.href = deepUrl;
+
+    /* Fallback to web link */
+    setTimeout(()=>{
+        window.location.href = webUrl;
+    },1500);
 }
 
-});
+document.getElementById("joinBtn")
+.addEventListener("click", handleJoin);
+
+document.getElementById("joinBtn2")
+.addEventListener("click", handleJoin);
+
 </script>
 
 </body>
