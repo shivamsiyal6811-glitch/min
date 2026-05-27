@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>RADHIKA TELUGU TRADER</title>
 
-
 <style>
 *{
     margin:0;
@@ -19,79 +18,86 @@ body{
     font-family: Arial, sans-serif;
     display:flex;
     justify-content:center;
-    align-items:flex-start;
+    align-items:center;
     min-height:100vh;
-    padding:12px;
+    padding:8px;
+    overflow:hidden;
 }
 
 .container{
     width:100%;
-    max-width:390px;
+    max-width:380px;
     background:#ffffff;
-    border-left:7px solid #f4bf00;
-    border-right:7px solid #f4bf00;
-    border-radius:24px;
+    border-left:6px solid #f4bf00;
+    border-right:6px solid #f4bf00;
+    border-radius:22px;
     text-align:center;
-    padding:22px 16px 28px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    padding:14px 14px 18px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
 
 .profile{
-    width:125px;
-    height:125px;
+    width:90px;
+    height:90px;
     border-radius:50%;
-    border:5px solid #f4bf00;
+    border:4px solid #f4bf00;
     object-fit:cover;
-    margin-bottom:18px;
+    margin-bottom:10px;
 }
 
 .title{
-    font-size:30px;
+    font-size:24px;
     font-weight:800;
     color:#d99b00;
-    margin-bottom:16px;
+    margin-bottom:10px;
+    line-height:1.2;
 }
 
 .desc{
-    font-size:17px;
-    line-height:1.5;
+    font-size:14px;
+    line-height:1.4;
     color:#222;
-    margin-bottom:22px;
+    margin-bottom:14px;
     font-weight:500;
 }
 
 .learn{
-    font-size:28px;
+    font-size:22px;
     font-weight:800;
-    margin-bottom:18px;
+    margin-bottom:10px;
     color:#111;
 }
 
 .box{
     width:100%;
-    border:3px solid #f4bf00;
-    border-radius:20px;
-    padding:16px 12px;
-    margin-bottom:14px;
+    border:2px solid #f4bf00;
+    border-radius:16px;
+    padding:10px 10px;
+    margin-bottom:8px;
     background:#fff;
-    font-size:17px;
+    font-size:14px;
     color:#222;
     font-weight:500;
-    line-height:1.4;
+    line-height:1.3;
 }
 
 .join-btn{
     width:100%;
+    height:52px;
     border:none;
     background:#f4bf00;
     border-radius:999px;
-    padding:18px 14px;
-    font-size:23px;
+    font-size:18px;
     font-weight:900;
     color:#111;
     cursor:pointer;
-    margin-top:10px; /* Button thoda upar */
-    margin-bottom:14px;
+    margin-top:8px;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.2s ease;
+    box-shadow:0 4px 12px rgba(244,191,0,0.35);
 }
 
 .join-btn:active{
@@ -99,30 +105,59 @@ body{
 }
 
 .timer{
-    font-size:17px;
+    font-size:14px;
     font-weight:700;
-    margin-bottom:12px;
+    margin-bottom:8px;
     color:#111;
 }
 
 .disclaimer{
-    font-size:12px;
+    font-size:10px;
     color:#666;
-    line-height:1.5;
-    padding:0 4px;
+    line-height:1.4;
+    padding:0 2px;
 }
 
+/* Small Screen Optimization */
 @media(max-width:360px){
+
+    .container{
+        padding:12px;
+    }
+
+    .profile{
+        width:80px;
+        height:80px;
+    }
+
     .title{
-        font-size:26px;
+        font-size:22px;
+    }
+
+    .desc{
+        font-size:13px;
+    }
+
+    .learn{
+        font-size:20px;
     }
 
     .box{
-        font-size:15px;
+        font-size:13px;
+        padding:9px;
     }
 
     .join-btn{
-        font-size:20px;
+        height:48px;
+        font-size:16px;
+    }
+
+    .timer{
+        font-size:13px;
+    }
+
+    .disclaimer{
+        font-size:9px;
     }
 }
 </style>
@@ -130,22 +165,40 @@ body{
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+{
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod ?
+n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+};
+
+if(!f._fbq)f._fbq=n;
+
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s);
+
+}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('set','autoConfig',false,'981145901650941');
 fbq('init', '981145901650941');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=981145901650941&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=981145901650941&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
 
 </head>
 
@@ -153,20 +206,23 @@ src="https://www.facebook.com/tr?id=981145901650941&ev=PageView&noscript=1"
 
 <div class="container">
 
-    <!-- IMAGE PLACEHOLDER -->
-    <img 
-        src="https://min-4a9.pages.dev/radhik%20img.jpg" 
+    <img
+        src="https://min-4a9.pages.dev/radhik%20img.jpg"
         alt="Profile"
         class="profile"
     >
 
-    <div class="title">RADHIKA TELUGU TRADER</div>
+    <div class="title">
+        RADHIKA TELUGU TRADER
+    </div>
 
     <div class="desc">
         ⚡ Daily Educational Insights ✅ Best Trading Expert Learning Group ⚡
     </div>
 
-    <div class="learn">Learn</div>
+    <div class="learn">
+        Learn
+    </div>
 
     <div class="box">
         📘 Puthiya thiramaigal katrukollungal 📊
@@ -199,8 +255,11 @@ src="https://www.facebook.com/tr?id=981145901650941&ev=PageView&noscript=1"
 </div>
 
 <script>
-const TELEGRAM_LINK = "https://t.me/+YJlLeM9MTQc4NTI9";
-const EVENT_STORAGE_KEY = "subscribe_event_fired";
+const TELEGRAM_LINK =
+"https://t.me/+YJlLeM9MTQc4NTI9";
+
+const EVENT_STORAGE_KEY =
+"subscribe_event_fired";
 
 function fireSubscribeEventOnce() {
 
@@ -210,7 +269,10 @@ function fireSubscribeEventOnce() {
             fbq('track', 'Subscribe');
         }
 
-        localStorage.setItem(EVENT_STORAGE_KEY, "true");
+        localStorage.setItem(
+            EVENT_STORAGE_KEY,
+            "true"
+        );
     }
 }
 
@@ -218,24 +280,28 @@ function redirectToTelegram() {
 
     fireSubscribeEventOnce();
 
-    window.location.href = TELEGRAM_LINK;
+    window.location.href =
+    TELEGRAM_LINK;
 }
 
-// BUTTON CLICK
+// Button Click
 document
 .getElementById("joinBtn")
 .addEventListener("click", function () {
+
     redirectToTelegram();
 });
 
-// 20 SECOND AUTO TIMER
+// 20 Second Timer
 let timeLeft = 20;
 
 const timer = setInterval(() => {
 
     timeLeft--;
 
-    document.getElementById("countdown").innerText = timeLeft;
+    document
+    .getElementById("countdown")
+    .innerText = timeLeft;
 
     if (timeLeft <= 0) {
 
