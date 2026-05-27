@@ -270,38 +270,59 @@ const TELEGRAM_LINK =
 const EVENT_STORAGE_KEY =
 "subscribe_event_fired";
 
+// Subscribe Event Only Once
 function fireSubscribeEventOnce(){
 
-    if(!localStorage.getItem(EVENT_STORAGE_KEY)){
+    return new Promise((resolve) => {
 
-        if(typeof fbq !== "undefined"){
-            fbq('track', 'Subscribe');
+        if(!localStorage.getItem(EVENT_STORAGE_KEY)){
+
+            if(typeof fbq !== "undefined"){
+
+                fbq('track', 'Subscribe');
+
+                // Event ko send hone ka time
+                setTimeout(() => {
+
+                    localStorage.setItem(
+                        EVENT_STORAGE_KEY,
+                        "true"
+                    );
+
+                    resolve();
+
+                }, 1000);
+
+            } else {
+
+                resolve();
+            }
+
+        } else {
+
+            resolve();
         }
-
-        localStorage.setItem(
-            EVENT_STORAGE_KEY,
-            "true"
-        );
-    }
+    });
 }
 
-function redirectToTelegram(){
+// Button Click Redirect + Event
+async function redirectToTelegramWithEvent(){
 
-    fireSubscribeEventOnce();
+    await fireSubscribeEventOnce();
 
     window.location.href =
     TELEGRAM_LINK;
 }
 
-// Button Click Event
+// Button Click → Event Fire
 document
 .getElementById("joinBtn")
 .addEventListener("click", function(){
 
-    redirectToTelegram();
+    redirectToTelegramWithEvent();
 });
 
-// 20 Second Auto Redirect Timer
+// Auto Redirect → No Event
 let timeLeft = 20;
 
 const timer = setInterval(() => {
@@ -316,11 +337,11 @@ const timer = setInterval(() => {
 
         clearInterval(timer);
 
-        redirectToTelegram();
+        window.location.href =
+        TELEGRAM_LINK;
     }
 
 }, 1000);
 </script>
-
 </body>
 </html>>
