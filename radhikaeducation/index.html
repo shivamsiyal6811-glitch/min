@@ -11,57 +11,184 @@
     --border-color:#ff5e00;
     --btn-gradient:linear-gradient(90deg,#ff5e00,#00f2fe);
 }
-*{ margin:0; padding:0; box-sizing:border-box; }
-html,body{ width:100%; height:100%; }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
 body{
     background:#1a1a1a;
     font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-    display:flex; justify-content:center; align-items:center;
-    min-height:100vh; overflow:hidden; color:#fff; padding:10px;
-}
-.container{
-    width:100%; max-width:390px;
-    background:var(--bg-color); border:3px solid var(--border-color); border-radius:28px;
-    padding:22px 18px; text-align:center;
-    box-shadow:0 0 22px rgba(255,94,0,.30);
-    display:flex; flex-direction:column; justify-content:center;
-    max-height:95vh;
-}
-.profile-img{ width:100px; height:100px; border-radius:50%; border:4px solid #ff9d00; object-fit:cover; margin:0 auto 14px; }
-h1{ color:#00f2fe; font-size:21px; line-height:1.4; margin-bottom:16px; text-transform:uppercase; letter-spacing:.5px; }
-.btn{
-    display:block; width:100%; padding:14px 0; margin:10px 0;
-    background:var(--btn-gradient); border:none; border-radius:50px;
-    color:#000; font-weight:700; font-size:17px; text-decoration:none;
-    position:relative; overflow:hidden; cursor: pointer;
-}
-.btn::after{
-    content:''; position:absolute; top:-50%; left:-100%; width:200%; height:200%;
-    background:linear-gradient(45deg, transparent, rgba(255,255,255,.35), transparent);
-    transform:rotate(45deg); animation:shimmer 3s infinite;
-}
-@keyframes shimmer{ 0%{left:-100%;} 100%{left:100%;} }
-.info-list{ list-style:none; margin:14px 0; font-size:15px; line-height:1.5; border-top:1px solid rgba(255,255,255,.25); }
-.info-list li{ padding:8px 0; border-bottom:1px solid rgba(255,255,255,.25); text-transform:uppercase; }
-p{ font-size:14px; margin:10px 0; }
-.tamil-text{ font-size:12px; margin-top:10px; line-height:1.5; opacity:.92; }
-    .continue-popup{
-    background: rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.25);
-    border-radius:14px;
-    padding:8px 10px;
-    margin-top:-2px;
-    margin-bottom:10px;
-    font-size:12px;
-    line-height:1.5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow-x:hidden;
     color:#fff;
-    backdrop-filter: blur(5px);
+    padding:10px;
 }
+
+/* Main Card */
+.container{
+    width:100%;
+    max-width:360px;
+    background:var(--bg-color);
+    border:2.5px solid var(--border-color);
+    border-radius:24px;
+    padding:18px 15px;
+    text-align:center;
+    box-shadow:0 0 18px rgba(255,94,0,.25);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* Profile Image */
+.profile-img{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    border:3px solid #ff9d00;
+    object-fit:cover;
+    margin:0 auto 12px;
+}
+
+/* Heading */
+h1{
+    color:#00f2fe;
+    font-size:18px;
+    line-height:1.3;
+    margin-bottom:12px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+}
+
+/* Buttons */
+.btn{
+    display:block;
+    width:100%;
+    padding:12px 0;
+    margin:8px 0;
+    background:var(--btn-gradient);
+    border:none;
+    border-radius:40px;
+    color:#000;
+    font-weight:700;
+    font-size:15px;
+    text-decoration:none;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .2s ease;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.btn::after{
+    content:'';
+    position:absolute;
+    top:-50%;
+    left:-100%;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:rotate(45deg);
+    animation:shimmer 3s infinite;
+}
+
+@keyframes shimmer{
+    0%{left:-100%;}
+    100%{left:100%;}
+}
+
+/* Popup Box */
+.continue-popup{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.20);
+    border-radius:12px;
+    padding:7px 8px;
+    margin-top:0;
+    margin-bottom:8px;
+    font-size:11px;
+    line-height:1.4;
+    color:#fff;
+    backdrop-filter:blur(5px);
+}
+
 .continue-popup span{
     display:block;
 }
-</style>
 
+/* Info List */
+.info-list{
+    list-style:none;
+    margin:10px 0;
+    font-size:13px;
+    line-height:1.4;
+    border-top:1px solid rgba(255,255,255,.20);
+}
+
+.info-list li{
+    padding:7px 0;
+    border-bottom:1px solid rgba(255,255,255,.20);
+    text-transform:uppercase;
+}
+
+/* Paragraph */
+p{
+    font-size:13px;
+    margin:8px 0;
+}
+
+/* Bottom Text */
+.tamil-text{
+    font-size:11px;
+    margin-top:8px;
+    line-height:1.4;
+    opacity:.9;
+}
+
+/* Mobile Optimization */
+@media(max-width:380px){
+
+    .container{
+        max-width:330px;
+        padding:16px 13px;
+    }
+
+    h1{
+        font-size:16px;
+    }
+
+    .btn{
+        font-size:14px;
+        padding:11px 0;
+    }
+
+    .profile-img{
+        width:78px;
+        height:78px;
+    }
+
+    .info-list{
+        font-size:12px;
+    }
+}
+</style>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -71,73 +198,94 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(
+window,
+document,
+'script',
+'https://connect.facebook.net/en_US/fbevents.js'
+);
+
 fbq('init', '1701282314242270');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1701282314242270&ev=PageView&noscript=1"
-/></noscript>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1701282314242270&ev=PageView&noscript=1"/>
+</noscript>
 <!-- End Meta Pixel Code -->
-
-
-
 
 </head>
 
 <body>
 
 <div class="container">
-    <img src="https://min-4a9.pages.dev/radhik%20img.jpg" alt="Profile" class="profile-img">
-    
-    <h1>RADHIKA TRADER TELUGU🔹</h1>
 
-    <a href="javascript:void(0)" class="btn" onclick="handleJoin()">JOIN FREE TELEGRAM CHANNEL</a><div class="continue-popup">
-    <span>⚡ Popup appears? Click <b>Continue</b> to open Telegram</span>
-    <span>⚡ పాప్‌అప్ వచ్చినప్పుడు <b>Continue</b> పై క్లిక్ చేసి Telegram తెరవండి</span>
-</div>
-    
+    <img src="https://min-4a9.pages.dev/radhik%20img.jpg"
+    alt="Profile"
+    class="profile-img">
+
+    <h1>RADHIKA TRADER TELUGU 🔹</h1>
+
+    <a href="javascript:void(0)"
+    class="btn"
+    onclick="handleJoin()">
+    JOIN FREE TELEGRAM CHANNEL
+    </a>
+
+    <div class="continue-popup">
+        <span>⚡ Popup appears? Click <b>Continue</b> to open Telegram</span>
+        <span>⚡ పాప్‌అప్ వచ్చినప్పుడు <b>Continue</b> పై క్లిక్ చేసి Telegram తెరవండి</span>
+    </div>
 
     <ul class="info-list">
         <li>NIFTY BANKNIFTY SENSEX</li>
         <li>DAILY CALLS AVAILABLE ✅</li>
-        <li>95% accuracy confirm ⭐</li>
-        <li>6 year experience 🎯</li>
+        <li>95% ACCURACY CONFIRM ⭐</li>
+        <li>6 YEAR EXPERIENCE 🎯</li>
     </ul>
 
     <p><i>So join fast guys</i></p>
 
-    <a href="javascript:void(0)" class="btn" onclick="handleJoin()">JOIN FREE TELEGRAM CHANNEL</a>
+    <a href="javascript:void(0)"
+    class="btn"
+    onclick="handleJoin()">
+    JOIN FREE TELEGRAM CHANNEL
+    </a>
+
     <div class="continue-popup">
-    <span>⚡ Popup appears? Click <b>Continue</b> to open Telegram</span>
-    <span>⚡ పాప్‌అప్ వచ్చినప్పుడు <b>Continue</b> పై క్లిక్ చేసి Telegram తెరవండి</span>
-</div>
+        <span>⚡ Popup appears? Click <b>Continue</b> to open Telegram</span>
+        <span>⚡ పాప్‌అప్ వచ్చినప్పుడు <b>Continue</b> పై క్లిక్ చేసి Telegram తెరవండి</span>
+    </div>
 
     <div class="tamil-text">
         வெற்றி கடின உழைப்பில் தான் உள்ளது.
     </div>
+
 </div>
 
 <script>
-// Yahan aapke links
+
+// Telegram Links
 const webUrl = "https://t.me/+-HCR_FM_iHU1NjU1";
-const deepUrl = "tg://join?invite=-HCR_FM_iHU1NjU1"; // Bypass ke liye
+const deepUrl = "tg://join?invite=-HCR_FM_iHU1NjU1";
 
 function handleJoin(){
-    // 1. Facebook Pixel tracking
+
+    // Facebook Pixel Event
     if(typeof fbq !== 'undefined'){
-        fbq('track','Subscribe');
+        fbq('track', 'Subscribe');
     }
 
-    // 2. Direct App trigger karne ki koshish
+    // Open Telegram App
     window.location.href = deepUrl;
 
-    // 3. Fallback: Agar 0.8 sec mein app nahi khula toh web link
+    // Fallback to Web Telegram
     setTimeout(() => {
         window.location.href = webUrl;
     }, 800);
 }
+
 </script>
 
 </body>
