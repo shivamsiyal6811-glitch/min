@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOTAM KUMAR EDUCATION </title>
+
+<!-- Meta Pixel -->
+
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#fff;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow:hidden;
+position:relative;
+}
+
+.bg-circle{
+position:absolute;
+border-radius:50%;
+opacity:.05;
+}
+
+.c1{
+width:300px;
+height:300px;
+background:#1877f2;
+top:-100px;
+left:-100px;
+}
+
+.c2{
+width:250px;
+height:250px;
+background:#25D366;
+bottom:-80px;
+right:-80px;
+}
+
+.container{
+max-width:420px;
+width:100%;
+text-align:center;
+background:#fff;
+padding:30px 25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+position:relative;
+z-index:2;
+}
+
+.logo{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #1877f2;
+margin-bottom:15px;
+}
+
+h1{
+font-size:26px;
+color:#1a1a1a;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:15px;
+color:#666;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.telegram-btn{
+display:inline-block;
+background:#0088cc;
+color:#fff;
+text-decoration:none;
+padding:16px 35px;
+font-size:18px;
+font-weight:bold;
+border-radius:50px;
+transition:.3s;
+}
+
+.telegram-btn:hover{
+transform:translateY(-2px);
+}
+
+.timer{
+margin-top:15px;
+font-size:14px;
+color:#555;
+}
+
+.disclaimer{
+margin-top:25px;
+padding:15px;
+background:#f8f9fa;
+border-radius:12px;
+font-size:12px;
+line-height:1.6;
+color:#555;
+text-align:left;
+}
+
+.disclaimer strong{
+display:block;
+margin-bottom:8px;
+color:#000;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-circle c1"></div>
+<div class="bg-circle c2"></div>
+
+<div class="container">
+
+<img src="https://min-4a9.pages.dev/gtmmmm.jpeg" class="logo" alt="Logo">
+
+<h1>GAUTAM KUMAR JHA ( ORIGINAL )</h1>
+
+<p class="subtitle">
+Educational content, market learning resources, and trading knowledge for informational purposes only.
+</p>
+
+<a href="https://t.me/+L-llu2x-7Oo1NmY1"
+class="telegram-btn"
+id="joinBtn">
+Join Free Telegram
+</a>
+
+<div class="timer">
+Automatic redirect in <span id="count">20</span> sec
+</div>
+
+<div class="disclaimer">
+<strong>Disclaimer</strong>
+This page is intended for educational and informational purposes only.
+No investment advice, profit guarantee, or financial recommendation is provided.
+Stock market investments are subject to market risks. Please consult a qualified financial advisor before making investment decisions.
+</div>
+
+</div>
+
+<script>
+const TELEGRAM_URL = "https://t.me/+L-llu2x-7Oo1NmY1";
+
+/* Event only once per device */
+document.getElementById("joinBtn").addEventListener("click", function(){
+
+if(!localStorage.getItem("subscribe_fired")){
+
+fbq('track','Subscribe');
+
+localStorage.setItem("subscribe_fired","yes");
+}
+
+});
+
+/* 20 second redirect WITHOUT EVENT */
+let time = 20;
+
+const interval = setInterval(() => {
+
+time--;
+
+document.getElementById("count").innerText = time;
+
+if(time <= 0){
+
+clearInterval(interval);
+
+window.location.href = TELEGRAM_URL;
+
+}
+
+},1000);
+</script>
+
+</body>
+</html>
