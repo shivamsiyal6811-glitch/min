@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Trade With Munaaf</title>
+
+<style>
+
+:root{
+    --bg:#071421;
+    --card:#102437;
+    --border:#00d9ff;
+    --text:#ffffff;
+    --accent:#ff9f1a;
+    --cyan:#00f7ff;
+    --btn:linear-gradient(90deg,#00d9ff,#00f7ff,#ff9f1a);
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: radial-gradient(circle at top,#0d2a44,#071421 70%);
+    min-height: 100vh;
+    min-height: -webkit-fill-available; /* Mobile viewport bug fix */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:var(--text);
+    padding:10px; /* Reduced padding for maximum screen fit */
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+/* BACKGROUND */
+.bg-anim{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+}
+
+.blob{
+    position:absolute;
+    width:250px; /* Reduced size slightly */
+    height:250px;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:.35;
+    animation:float 10s infinite ease-in-out;
+}
+
+.blob:nth-child(1){
+    background:#00f7ff;
+    top:-80px;
+    left:-80px;
+}
+
+.blob:nth-child(2){
+    background:#ff9f1a;
+    bottom:-100px;
+    right:-80px;
+    animation-delay:2s;
+}
+
+.blob:nth-child(3){
+    background:#2b7cff;
+    top:40%;
+    left:60%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(30px) scale(1.05);}
+}
+
+/* MAIN BOX - SCREEN FIT OPTIMIZED */
+.main-box{
+    width:100%;
+    max-width:390px; /* Slightly narrower for compact mobile feel */
+    max-height: 96vh; /* Prevents overflow */
+    background:rgba(16,36,55,.78);
+    border:1px solid rgba(0,217,255,.25);
+    border-radius:24px; /* Slightly smaller radius */
+    padding:14px 14px; /* Reduced internal padding */
+    text-align:center;
+    position:relative;
+    z-index:2;
+    backdrop-filter:blur(18px);
+    box-shadow:0 0 30px rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TAG */
+.tag{
+    display:inline-block;
+    padding:5px 12px; /* Smaller tag */
+    border-radius:50px;
+    background:linear-gradient(90deg,#00f7ff,#ff9f1a);
+    color:#071421;
+    font-size:10px; /* Smaller text */
+    font-weight:900;
+    margin: 0 auto 8px auto;
+}
+
+/* PROFILE IMAGE - SMALLER & RESPONSIVE */
+.profile-img{
+    width:85px; /* Reduced from 110px */
+    height:85px; /* Reduced from 110px */
+    border-radius:20px;
+    object-fit:cover;
+    border:2.5px solid var(--cyan);
+    display:block;
+    margin:6px auto 8px; 
+    box-shadow:0 0 20px rgba(0,247,255,.25);
+}
+
+/* TITLE */
+h1{
+    font-size:20px; /* Reduced from 26px */
+    margin:4px 0;
+    color:var(--cyan);
+    font-weight:900;
+}
+
+/* DESC */
+.desc{
+    font-size:12px; /* Reduced from 14px */
+    line-height:1.5;
+    margin-bottom:8px;
+    color:#e8f3ff;
+}
+
+.highlight{
+    color:var(--accent);
+    font-weight:900;
+}
+
+/* BUTTON */
+.flash-btn{
+    width:100%;
+    display:block;
+    text-decoration:none;
+    padding:11px; /* Reduced padding for compactness */
+    margin:6px 0;
+    border-radius:14px;
+    background:var(--btn);
+    color:#071421;
+    font-size:14px; /* Reduced from 16px */
+    font-weight:900;
+    border:none;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,247,255,.2);
+    animation:pulse 1.8s infinite;
+}
+
+.flash-btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+    animation:shine 2.5s infinite;
+}
+
+@keyframes shine{
+    100%{left:160%;}
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.02);}
+}
+
+/* CARDS - COMPACT FOR SINGLE PAGE FIT */
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    padding:8px 12px; /* Smaller inner padding */
+    border-radius:12px;
+    margin:4px 0; /* Reduced margin */
+    font-size:11.5px; /* Smaller text size */
+    text-align:left;
+    backdrop-filter:blur(10px);
+}
+
+/* FOOTER */
+.footer{
+    font-size:10px; /* Smaller text */
+    margin-top:8px;
+    opacity:.8;
+    line-height:1.4;
+}
+
+/* POPUP TEXT */
+.continue-popup{
+    font-size:10.5px; /* Smaller text */
+    margin:4px 0 6px;
+    color:#cfe5ff;
+}
+
+/* LAYER FIX */
+body > *{
+    position:relative;
+    z-index:1;
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'1681593363019382');
+fbq('init', '1681593363019382');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1681593363019382&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-anim">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+</div>
+
+<div class="main-box">
+
+<div>
+    <div class="tag">🔥 FREE STOCK MARKET COMMUNITY</div>
+</div>
+
+<!-- LOGO -->
+<img class="profile-img"
+src="https://github.com/nafesslaptop-web/newm/releases/download/newn/new.munaaf.jpg"
+alt="profile">
+
+<h1>Trade With Munaaf 📈</h1>
+
+<div class="desc">
+🚀 మా తెలుగు ట్రేడింగ్ కమ్యూనిటీలో చేరండి<br>
+<span class="highlight">రోజువారీ మార్కెట్ అప్‌డేట్స్</span>
+మరియు Trading Support పూర్తిగా ఉచితం ✅
+</div>
+
+<a href="javascript:void(0)" class="flash-btn" onclick="openTelegram()">
+🚀 TELEGRAM GROUP JOIN
+</a>
+
+<div class="continue-popup">
+⚡ Popup వస్తే Continue పై క్లిక్ చేసి Telegram ఓపెన్ చేయండి
+</div>
+
+<div class="card">📊 NIFTY / BANKNIFTY మార్కెట్ అప్‌డేట్స్</div>
+<div class="card">⚡ ఇంట్రాడే లెర్నింగ్ & ట్రేడింగ్ సపోర్ట్</div>
+<div class="card">🎯 ప్రారంభికులకు సులభమైన కమ్యూనిటీ</div>
+<div class="card">🏆 వేగమైన మార్కెట్ సమాచారం</div>
+
+<a href="javascript:void(0)" class="flash-btn" onclick="openTelegram()">
+✅ FREE JOIN NOW
+</a>
+
+<div class="footer">
+స్టాక్ మార్కెట్ పెట్టుబడులు మార్కెట్ రిస్క్‌కు లోబడి ఉంటాయి.<br>
+నేర్చుకుని బాధ్యతగా ట్రేడ్ చేయండి.
+</div>
+
+</div>
+
+<script>
+
+const telegramDeepLink = "tg://join?invite=B_XD5Pa6cMw4MGI1";
+const fallbackUrl = "https://t.me/+6Py1l4-LKcYzN2E1";
+
+function openTelegram(){
+
+    if(!sessionStorage.getItem("tg_subscribed")){
+        if(typeof fbq !== 'undefined'){
+            fbq('track','Subscribe');
+        }
+        sessionStorage.setItem("tg_subscribed","true");
+    }
+
+    window.location.href = telegramDeepLink;
+
+    setTimeout(()=>{
+        window.location.href = fallbackUrl;
+    },1200);
+}
+
+</script>
+
+</body>
+</html>
