@@ -265,29 +265,41 @@ src="https://www.facebook.com/tr?id=2028595031378293&ev=PageView&noscript=1"/>
 <script>
 const TELEGRAM_LINK = "https://t.me/+YJlLeM9MTQc4NTI9";
 
+// Button Click → Subscribe Event
 document.getElementById("joinBtn").addEventListener("click", function(e){
 
     e.preventDefault();
 
-    if (typeof fbq !== "undefined") {
+    if(typeof fbq !== "undefined"){
+        fbq('track', 'Subscribe');
+    }
 
-        fbq('track', 'Subscribe', {}, {
-            eventCallback: function () {
-                window.location.href = TELEGRAM_LINK;
-            }
-        });
+    setTimeout(function(){
+        window.location.href = TELEGRAM_LINK;
+    }, 300);
 
-        // Fallback agar callback na aaye
-        setTimeout(function () {
-            window.location.href = TELEGRAM_LINK;
-        }, 3000);
+});
 
-    } else {
+// 20 Second Auto Redirect
+let timeLeft = 20;
+
+const countdownElement =
+document.getElementById("countdown");
+
+const timer = setInterval(function(){
+
+    timeLeft--;
+
+    countdownElement.innerText = timeLeft;
+
+    if(timeLeft <= 0){
+
+        clearInterval(timer);
 
         window.location.href = TELEGRAM_LINK;
     }
 
-});
+}, 1000);
 </script>
     
 </body>
