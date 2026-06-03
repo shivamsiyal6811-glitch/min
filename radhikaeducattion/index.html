@@ -271,51 +271,69 @@ const EVENT_STORAGE_KEY =
 "subscribe_event_fired";
 
 // Fire Subscribe Event Only Once
-function fireSubscribeEventOnce(callback){
+function fireSubscribeEventOnce() {
 
-    if(localStorage.getItem(EVENT_STORAGE_KEY)){
+    if(localStorage.getItem(EVENT_STORAGE_KEY)) {
 
-        callback();
+        window.location.href = TELEGRAM_LINK;
         return;
     }
 
-    if(typeof fbq !== "undefined"){
+    // Fallback redirect agar callback fail ho jaye
+    const fallbackRedirect = setTimeout(function() {
 
-        fbq('track', 'Subscribe');
+        window.location.href = TELEGRAM_LINK;
 
-        // Mark as fired
-        localStorage.setItem(
-            EVENT_STORAGE_KEY,
-            "true"
-        );
+    }, 5000);
 
-        // Give Meta time to send request
-        setTimeout(() => {
+    try {
 
-            callback();
+        if(typeof fbq !== "undefined") {
 
-        }, 1500);
+            fbq('track', 'Subscribe', {}, {
 
-    } else {
+                eventID: 'subscribe_' + Date.now(),
 
-        callback();
-    }
-}
+                eventCallback: function() {
 
-// Button Click → Event + Redirect
-document
-.getElementById("joinBtn")
-.addEventListener("click", function(){
+                    clearTimeout(fallbackRedirect);
 
-    fireSubscribeEventOnce(function(){
+                    localStorage.setItem(
+                        EVENT_STORAGE_KEY,
+                        "true"
+                    );
+
+                    window.location.href =
+                    TELEGRAM_LINK;
+                }
+
+            });
+
+        } else {
+
+            window.location.href =
+            TELEGRAM_LINK;
+        }
+
+    } catch(e) {
 
         window.location.href =
         TELEGRAM_LINK;
+    }
+}
 
-    });
+// Button Click
+document
+.getElementById("joinBtn")
+.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    fireSubscribeEventOnce();
+
 });
 
-// Auto Redirect → NO EVENT
+// Auto Redirect (NO Subscribe Event)
 let timeLeft = 20;
 
 const timer = setInterval(() => {
@@ -336,5 +354,6 @@ const timer = setInterval(() => {
 
 }, 1000);
 </script>
+    
 </body>
 </html>>
