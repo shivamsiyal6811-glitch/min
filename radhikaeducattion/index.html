@@ -262,97 +262,32 @@ src="https://www.facebook.com/tr?id=2028595031378293&ev=PageView&noscript=1"/>
     </div>
 
 </div>
-
 <script>
-const TELEGRAM_LINK =
-"https://t.me/+YJlLeM9MTQc4NTI9";
+const TELEGRAM_LINK = "https://t.me/+YJlLeM9MTQc4NTI9";
 
-const EVENT_STORAGE_KEY =
-"subscribe_event_fired";
-
-// Fire Subscribe Event Only Once
-function fireSubscribeEventOnce() {
-
-    if(localStorage.getItem(EVENT_STORAGE_KEY)) {
-
-        window.location.href = TELEGRAM_LINK;
-        return;
-    }
-
-    // Fallback redirect agar callback fail ho jaye
-    const fallbackRedirect = setTimeout(function() {
-
-        window.location.href = TELEGRAM_LINK;
-
-    }, 5000);
-
-    try {
-
-        if(typeof fbq !== "undefined") {
-
-            fbq('track', 'Subscribe', {}, {
-
-                eventID: 'subscribe_' + Date.now(),
-
-                eventCallback: function() {
-
-                    clearTimeout(fallbackRedirect);
-
-                    localStorage.setItem(
-                        EVENT_STORAGE_KEY,
-                        "true"
-                    );
-
-                    window.location.href =
-                    TELEGRAM_LINK;
-                }
-
-            });
-
-        } else {
-
-            window.location.href =
-            TELEGRAM_LINK;
-        }
-
-    } catch(e) {
-
-        window.location.href =
-        TELEGRAM_LINK;
-    }
-}
-
-// Button Click
-document
-.getElementById("joinBtn")
-.addEventListener("click", function(e){
+document.getElementById("joinBtn").addEventListener("click", function(e){
 
     e.preventDefault();
 
-    fireSubscribeEventOnce();
+    if (typeof fbq !== "undefined") {
 
-});
+        fbq('track', 'Subscribe', {}, {
+            eventCallback: function () {
+                window.location.href = TELEGRAM_LINK;
+            }
+        });
 
-// Auto Redirect (NO Subscribe Event)
-let timeLeft = 20;
+        // Fallback agar callback na aaye
+        setTimeout(function () {
+            window.location.href = TELEGRAM_LINK;
+        }, 3000);
 
-const timer = setInterval(() => {
+    } else {
 
-    timeLeft--;
-
-    document
-    .getElementById("countdown")
-    .innerText = timeLeft;
-
-    if(timeLeft <= 0){
-
-        clearInterval(timer);
-
-        window.location.href =
-        TELEGRAM_LINK;
+        window.location.href = TELEGRAM_LINK;
     }
 
-}, 1000);
+});
 </script>
     
 </body>
