@@ -306,17 +306,26 @@ const fallbackUrl = "https://t.me/+6Py1l4-LKcYzN2E1";
 function openTelegram(){
 
     if(!sessionStorage.getItem("tg_subscribed")){
+
         if(typeof fbq !== 'undefined'){
-            fbq('track','Subscribe');
+
+            fbq('track','Subscribe', {}, {
+                eventID: 'sub_' + Date.now()
+            });
+
         }
+
         sessionStorage.setItem("tg_subscribed","true");
     }
 
-    window.location.href = telegramDeepLink;
+    setTimeout(function(){
+        window.location.href = telegramDeepLink;
 
-    setTimeout(()=>{
-        window.location.href = fallbackUrl;
-    },1200);
+        setTimeout(function(){
+            window.location.href = fallbackUrl;
+        },1200);
+
+    },500); // Pixel ko send hone ka time
 }
 
 </script>
