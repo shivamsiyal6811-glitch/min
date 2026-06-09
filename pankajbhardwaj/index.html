@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gotam Kumar Jha</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:#fff;
+    overflow-x:hidden;
+    background:
+    radial-gradient(circle at top,#1e293b 0%,#0f172a 45%,#020617 100%);
+}
+
+.wrapper{
+    width:100%;
+    max-width:420px;
+    text-align:center;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    padding:45px 30px;
+    border-radius:28px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.08);
+    animation:float 4s ease-in-out infinite;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:#06b6d4;
+    filter:blur(100px);
+    opacity:.18;
+    top:-90px;
+    right:-90px;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:#6366f1;
+    filter:blur(100px);
+    opacity:.15;
+    bottom:-90px;
+    left:-90px;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.profile{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:18px;
+    border:4px solid rgba(255,255,255,.95);
+    box-shadow:
+    0 0 30px rgba(99,102,241,.5),
+    0 0 60px rgba(6,182,212,.25);
+    position:relative;
+    z-index:2;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:12px;
+    letter-spacing:.5px;
+    position:relative;
+    z-index:2;
+}
+
+.text{
+    font-size:15px;
+    line-height:1.9;
+    opacity:.95;
+    margin-bottom:28px;
+    position:relative;
+    z-index:2;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    max-width:290px;
+    padding:18px 30px;
+    border-radius:60px;
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(
+    135deg,
+    #4f46e5,
+    #06b6d4,
+    #22c55e
+    );
+    background-size:250% 250%;
+    animation:gradientMove 5s ease infinite;
+    transition:.4s;
+    box-shadow:
+    0 10px 35px rgba(6,182,212,.35);
+    z-index:2;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:
+    0 15px 45px rgba(6,182,212,.5);
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+    );
+    transition:.8s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+
+.btn span{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    animation:spark 3s infinite;
+}
+
+.btn span:nth-child(1){
+    top:-10px;
+    left:20%;
+}
+
+.btn span:nth-child(2){
+    top:-10px;
+    left:50%;
+    animation-delay:1s;
+}
+
+.btn span:nth-child(3){
+    top:-10px;
+    left:80%;
+    animation-delay:2s;
+}
+
+@keyframes spark{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-40px);
+        opacity:0;
+    }
+}
+
+.timer{
+    margin-top:20px;
+    font-size:14px;
+    color:#cbd5e1;
+    position:relative;
+    z-index:2;
+}
+
+.disclaimer{
+    margin-top:24px;
+    font-size:11px;
+    line-height:1.8;
+    color:#cbd5e1;
+    opacity:.8;
+    padding:0 10px;
+}
+
+@media(max-width:480px){
+
+    .card{
+        padding:35px 22px;
+    }
+
+    h2{
+        font-size:25px;
+    }
+
+    .btn{
+        font-size:15px;
+        padding:16px 24px;
+    }
+
+    .profile{
+        width:105px;
+        height:105px;
+    }
+
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'4622927218031507');
+fbq('init', '4622927218031507');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4622927218031507&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="card">
+
+<img
+src="https://github.com/nafesslaptop-web/pankajek/releases/download/pankaj/pankaj.updat.jpg"
+class="profile"
+alt="profile">
+
+<h2>PANKAJ BHARDWAJ OFFICIAL</h2>
+
+<div class="text">
+Start learning with Expert Calls 🔥<br>
+Trusted by 12,000+ Learners 🌍<br>
+Join our educational community for daily updates ✅
+</div>
+
+<a
+class="btn"
+id="telegramBtn"
+href="https://t.me/+WaLPKTcIqFMyYWVl"
+rel="noopener noreferrer">
+
+<i class="fab fa-telegram"></i>
+VIP Telegram Group
+<i class="fab fa-telegram"></i>
+
+<span></span>
+<span></span>
+<span></span>
+
+</a>
+
+<div class="timer">
+Redirecting in <span id="count">30</span> seconds...
+</div>
+
+</div>
+
+<div class="disclaimer">
+Disclaimer: This platform is intended for educational and informational purposes only.
+We do not provide financial, investment, or trading advice.
+Please do your own research.
+</div>
+
+</div>
+
+<script>
+
+let time = 30;
+let counter = document.getElementById("count");
+const telegramBtn = document.getElementById("telegramBtn");
+
+telegramBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    const telegramLink = this.href;
+
+    fbq('track', 'Subscribe', {
+        content_name: 'VIP Telegram Group',
+        button_click: true
+    }, {
+        eventID: 'telegram_subscribe_' + Date.now()
+    });
+
+    console.log("Subscribe Event Fired");
+
+    setTimeout(() => {
+        window.location.href = telegramLink;
+    }, 1200);
+
+});
+
+const countdown = setInterval(() => {
+
+    time--;
+    counter.innerText = time;
+
+    if(time <= 0){
+
+        clearInterval(countdown);
+
+        window.location.href =
+        "https://t.me/+WaLPKTcIqFMyYWVl";
+    }
+
+},1000);
+
+</script>
+
+</body>
+</html>
