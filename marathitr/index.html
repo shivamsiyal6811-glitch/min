@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARATHI TRADER </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{
+min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;color:#fff;
+background:linear-gradient(135deg,#FF6B00 0%,#1E293B 45%,#0F172A 100%);
+}
+.wrapper{width:100%;max-width:460px}
+.card{
+background:rgba(8,15,30,.9);padding:40px 28px;border-radius:30px;text-align:center;
+border:1px solid rgba(255,107,0,.4);
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.profile{
+width:120px;height:120px;border-radius:50%;object-fit:cover;
+border:4px solid #FF6B00;
+}
+.verify{margin-top:10px;color:#FFD700;font-weight:700}
+h2{margin-top:15px}
+.stats{margin-top:15px;color:#FFD700;line-height:1.8}
+.text{margin-top:20px;line-height:1.8;color:#e2e8f0}
+.benefits{
+margin-top:20px;text-align:left;padding:18px;border-radius:18px;
+background:rgba(255,255,255,.05)
+}
+.benefits div{padding:7px 0}
+.btn{
+display:flex;justify-content:center;align-items:center;gap:10px;
+margin-top:25px;padding:18px;border-radius:50px;text-decoration:none;
+font-weight:800;color:#111;
+background:linear-gradient(135deg,#FF6B00,#FF8C00,#FFD700);
+}
+.timer,.disclaimer{margin-top:20px}
+.disclaimer{font-size:12px;line-height:1.7;color:#cbd5e1}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'4478756505732568');
+fbq('init', '4478756505732568');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4478756505732568&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+</head>
+<body>
+<div class="wrapper">
+<div class="card">
+<img src="https://github.com/shivamsiyal6811-glitch/MARATHI/releases/download/MARATHI/marathi.jpg" class="profile">
+<div class="verify"><i class="fas fa-check-circle"></i> Verified Marathi Community</div>
+<h2>MARATHI TRADER </h2>
+
+<div class="stats">
+⭐ 50,000+ Learners<br>
+🌍 Maharashtra Marathi Community<br>
+🔥 Daily Market Learning Updates
+</div>
+
+<div class="text">
+📚 शेअर मार्केट, ट्रेडिंग आणि Financial Knowledge शिकण्यासाठी खास मराठी Community.<br><br>
+🎯 Beginners साठी सोप्या भाषेत समजावून सांगितले जाते.
+</div>
+
+<a class="btn" id="telegramBtn" href="https://t.me/+-7GuDCb-MUAxNzc1">
+<i class="fab fa-telegram"></i>
+मराठी TELEGRAM COMMUNITY JOIN करा
+</a>
+
+<div class="benefits">
+<div>📈 Daily Market Learning Updates</div>
+<div>📚 Educational Content in Marathi</div>
+<div>🎯 Beginner Friendly Explanations</div>
+<div>🔥 Active Marathi Community</div>
+<div>💡 Financial Awareness & Knowledge</div>
+</div>
+
+<div class="timer">
+⏳ <span id="count">30</span> सेकंदांमध्ये Telegram वर Redirect होईल...
+</div>
+</div>
+
+<div class="disclaimer">
+महत्वाची सूचना: ही Community केवळ शैक्षणिक आणि माहितीपर उद्देशांसाठी आहे.
+ही Investment Advice किंवा Trading Recommendation नाही.
+कुठलीही गुंतवणूक करण्यापूर्वी स्वतःचा अभ्यास करा.
+</div>
+</div>
+
+<script>
+let time=30;
+let c=document.getElementById("count");
+let cd=setInterval(()=>{
+time--; c.innerText=time;
+if(time<=0){
+clearInterval(cd);
+window.location.href="https://t.me/+-7GuDCb-MUAxNzc1";
+}
+},1000);
+</script>
+</body>
+</html>
