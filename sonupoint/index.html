@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trading Tamil Community</title>
+
+<style>
+
+:root{
+    --bg:#120224;
+    --card:#1f0b38;
+    --border:#ff00d4;
+    --text:#ffffff;
+    --cyan:#00f7ff;
+    --btn:linear-gradient(90deg,#ff00d4,#00f7ff,#ffe600);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:
+    radial-gradient(circle at top,#38135f,#120224 70%);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    padding:12px;
+    color:var(--text);
+}
+
+.main-box{
+    width:100%;
+    max-width:460px;
+    background:rgba(31,11,56,.95);
+    border:3px solid var(--border);
+    border-radius:34px;
+    padding:22px 18px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+    0 0 25px rgba(255,0,212,.35),
+    0 0 55px rgba(0,247,255,.15);
+}
+
+.glow-circle{
+    width:140px;
+    height:140px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    filter:blur(10px);
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ffe600,#ff9900);
+    color:#000;
+    font-size:13px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.profile-img{
+    width:100px;
+    height:100px;
+    border-radius:24px;
+    object-fit:cover;
+    border:4px solid #00f7ff;
+    margin:0 auto 16px;
+    display:block;
+    box-shadow:0 0 22px rgba(0,247,255,.5);
+}
+
+h1{
+    font-size:24px;
+    line-height:1.4;
+    margin-bottom:10px;
+    color:#00f7ff;
+    font-weight:900;
+}
+
+.desc{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:16px;
+    color:#f3f3f3;
+}
+
+.highlight{
+    color:#ffe600;
+    font-weight:800;
+}
+
+.flash-btn{
+    width:100%;
+    display:block;
+    text-decoration:none;
+    padding:16px 14px;
+    margin:14px 0 8px;
+    border-radius:18px;
+    background:var(--btn);
+    color:#000;
+    font-size:18px;
+    font-weight:900;
+    position:relative;
+    overflow:hidden;
+    letter-spacing:.5px;
+    border:none;
+    cursor:pointer;
+    box-shadow:
+    0 0 18px rgba(255,0,212,.55),
+    0 0 30px rgba(0,247,255,.30);
+    animation:pulse 1.5s infinite;
+}
+
+.flash-btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:90%;
+    height:100%;
+    background:rgba(255,255,255,.45);
+    transform:skewX(-20deg);
+    animation:shine 2s infinite;
+}
+
+@keyframes shine{
+    100%{
+        left:140%;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.03);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.continue-popup{
+    margin-top:4px;
+    margin-bottom:14px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    font-size:13px;
+    line-height:1.5;
+    color:#ddd;
+    text-align:center;
+}
+
+.continue-popup b{
+    color:#ffe600;
+}
+
+.card-list{
+    margin:18px 0;
+}
+
+.card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    padding:13px;
+    border-radius:18px;
+    margin-bottom:10px;
+    text-align:left;
+    font-size:14px;
+    line-height:1.6;
+    font-weight:600;
+}
+
+.footer{
+    margin-top:14px;
+    font-size:12px;
+    line-height:1.7;
+    opacity:.9;
+}
+
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'971978605662829');
+fbq('init', '971978605662829');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=971978605662829&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+<div class="main-box">
+
+<div class="glow-circle"></div>
+
+<div class="tag">
+🔥 FREE STOCK MARKET COMMUNITY
+</div>
+
+<img 
+src="https://github.com/siyalshivam690-maker/point1/releases/download/3p/3.p.jpg"
+alt="Profile"
+class="profile-img">
+
+<h1>
+3 POINT TRADER ( நாகர் ) 📈
+</h1>
+
+<div class="desc">
+தமிழ் டிரேடிங் சமூகத்தில் இணையுங்கள் 🚀<br>
+<span class="highlight">
+Daily Market Updates
+</span>
+மற்றும் Trading Support இலவசம் ✅
+</div>
+
+<!-- BUTTON 1 -->
+<a 
+href="javascript:void(0)"
+class="flash-btn"
+onclick="openTelegram()">
+🚀 TELEGRAM GROUP JOIN
+</a>
+
+<div class="continue-popup">
+    <span>
+        ⚡ Popup appears? Click <b>Continue</b> to open Telegram
+    </span>
+
+    <span>
+        ⚡ பாப்அப் வந்தால் <b>Continue</b> என்பதைக் கிளிக் செய்து Telegram திறக்கவும்
+    </span>
+</div>
+
+<div class="card-list">
+
+<div class="card">
+📊 NIFTY / BANKNIFTY Market Updates
+</div>
+
+<div class="card">
+⚡ Intraday Learning & Support
+</div>
+
+<div class="card">
+🎯 Beginner Friendly Trading Community
+</div>
+
+<div class="card">
+🏆 Fast Market Information & Discussion
+</div>
+
+</div>
+
+<!-- BUTTON 2 -->
+<a 
+href="javascript:void(0)"
+class="flash-btn"
+onclick="openTelegram()">
+✅ FREE JOIN NOW
+</a>
+
+<div class="continue-popup">
+    <span>
+        ⚡ Popup appears? Click <b>Continue</b> to open Telegram
+    </span>
+
+    <span>
+        ⚡ பாப்அப் வந்தால் <b>Continue</b> என்பதைக் கிளிக் செய்து Telegram திறக்கவும்
+    </span>
+</div>
+
+<div class="footer">
+பங்குச்சந்தை முதலீடுகள் சந்தை அபாயங்களுக்கு உட்பட்டவை.<br>
+கற்றுக்கொண்டு பொறுப்புடன் செயல்படுங்கள்.
+</div>
+
+</div>
+
+<script>
+
+const telegramDeepLink =
+"tg://join?invite=Ej8FEEUZwuk4N2U9";
+
+const fallbackUrl =
+"https://t.me/+Ej8FEEUZwuk4N2U9";
+
+function openTelegram(){
+
+    // Subscribe event only once
+    if(!sessionStorage.getItem("tg_subscribed")){
+
+        if(typeof fbq !== 'undefined'){
+            fbq('track','Subscribe');
+        }
+
+        sessionStorage.setItem(
+            "tg_subscribed",
+            "true"
+        );
+    }
+
+    // Open Telegram App
+    window.location.href =
+    telegramDeepLink;
+
+    // Fallback link
+    setTimeout(()=>{
+        window.location.href =
+        fallbackUrl;
+    },1200);
+}
+
+</script>
+</body>
+</html>
+>
